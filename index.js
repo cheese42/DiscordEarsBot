@@ -59,26 +59,7 @@ async function convert_audio(input) {
 //////////////// CONFIG //////////////////
 //////////////////////////////////////////
 
-const SETTINGS_FILE = 'settings.json';
 
-let DISCORD_TOK = null;
-let WITAPIKEY = null; 
-let SPOTIFY_TOKEN_ID = null;
-let SPOTIFY_TOKEN_SECRET = null;
-
-function loadConfig() {
-    if (fs.existsSync(SETTINGS_FILE)) {
-        const CFG_DATA = JSON.parse( fs.readFileSync(SETTINGS_FILE, 'utf8') );
-        DISCORD_TOK = CFG_DATA.discord_token;
-        WITAPIKEY = CFG_DATA.wit_ai_token;
-    } else {
-        DISCORD_TOK = process.env.DISCORD_TOK;
-        WITAPIKEY = process.env.WITAPIKEY;
-    }
-    if (!DISCORD_TOK || !WITAPIKEY)
-        throw 'failed loading config #113 missing keys!'
-    
-}
 loadConfig()
 
 const https = require('https')
