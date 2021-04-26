@@ -147,6 +147,24 @@ function updateWitAIAppLang(appID, lang, cb) {
 //////////////////////////////////////////
 //////////////////////////////////////////
 //////////////////////////////////////////
+//Mozilla Deepspeech
+const DeepSpeech = require('deepspeech');
+const LM_ALPHA = 0.75;
+const LM_BETA = 1.85;
+const BEAM_WIDTH = 1024;
+let modelPath = './models/output_graph.pbmm';
+let lmPath = './models/lm.binary';
+let triePath = './models/trie';let model = new DeepSpeech.Model(modelPath, BEAM_WIDTH);
+let desiredSampleRate = model.sampleRate();
+model.enableDecoderWithLM(lmPath, triePath, LM_ALPHA, LM_BETA);
+async function transcribe_deepspeech(file) {
+    const audioBuffer = fs.readFileSync(file)
+    const audioLength = (audioBuffer.length / 2) * (1 / desiredSampleRate);
+    console.log('audio length', audioLength);
+    let result = model.stt(audioBuffer.slice(0, audioBuffer.length / 2));
+    console.log('result:', result);
+    return result;
+}
 
 
 const Discord = require('discord.js')
@@ -364,24 +382,7 @@ async function transcribe_witai(buffer) {
         return output;
     } catch (e) { console.log('transcribe_witai 851:' + e); console.log(e) }
 }
-//Mozilla Deepspeech
-const DeepSpeech = require('deepspeech');
-const LM_ALPHA = 0.75;
-const LM_BETA = 1.85;
-const BEAM_WIDTH = 1024;
-let modelPath = './models/output_graph.pbmm';
-let lmPath = './models/lm.binary';
-let triePath = './models/trie';let model = new DeepSpeech.Model(modelPath, BEAM_WIDTH);
-let desiredSampleRate = model.sampleRate();
-model.enableDecoderWithLM(lmPath, triePath, LM_ALPHA, LM_BETA);
-async function transcribe_deepspeech(file) {
-    const audioBuffer = fs.readFileSync(file)
-    const audioLength = (audioBuffer.length / 2) * (1 / desiredSampleRate);
-    console.log('audio length', audioLength);
-    let result = model.stt(audioBuffer.slice(0, audioBuffer.length / 2));
-    console.log('result:', result);
-    return result;
-}
+
 
 
 // Google Speech API
