@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "discord-speech-to-text-311801",
+  "private_key_id": "f9b48582ed9609ffdd93abecfb8ab031910c5c78",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCexkcOLHsM9pgH\nrhQ34e5JJ0DMTK0GikZu+urcJMJM4ZelnZW9oGvql0SBpZDLlTqyjbq55Fh1WP04\n1PssPNrKLs0HFG9pLaQyoThY3+MgNjNCmGNxol7YmtXhlH75iO2VBl2dxi6l05yf\nPzcHXk+JIPI57qIrZKBVmZuSSVpf6Btz/PanJhKTdFEJ8gF23Bj58q/vwAMgeNps\n9N266MnXiX80vlgb7tW9Ng8EDCQeZPpQkI1V3coBLnaThu+7684m/RPf//1IJMhz\nChDHdD0UxiMfilkBd47eeNu5+Eg+vz361esrdoCwpRZ4cyQdbNTlWK3IhZ19LF70\nLZ2oR0npAgMBAAECggEAC68wmkrXM7UaVecEvre4ywzhYEzckds6A4pMdNlxVr+Q\n+E47Gg/0ySLggYBPQiV6rZpaWA+axpNUhUAVNjmfP0Wc7y0HkDsHNvZK2NgsaoSF\nQVzIurDV39pbLDqQR+mrVEN6Pwq53Zhk/F97plDq3lRR8cX4N2R0cSrjT5YS2XUJ\naEbjEShCBECTzAHM21oFuPgzcWeiGZ47SEgrAw3R/ZNq+I41iVpO8nhUwctN4FMO\nn0p0xja32TQds6HqO+N0BgHrgi5Bc2jfE9t5OvibmSzxZkXL2jei+Unoe3RYkcSa\n7FeEKZ405YcGuEC+MYlIncsqvhZtyFnfCAXWLS9opQKBgQDKuEutWSwKN8R1bq3R\nP7LfGBhlfiSvDriz5LwVumB8E9gSrldUvGDaWN0aOMn87c2v0Y+XfwZB58HMoZVG\n/3Sb1gO9hdqtMBryg6Fp5yN0tVsFHEqTJs90Nd63wipdprKt/00mP8pxdpryxeE4\ntmWD2D5IPeRQ1xUjFqFkmz7WbQKBgQDIgS7Od2tV9L4IMGyzMOHEi4tdmHhw/S2D\ngVrh/Zhsp1KBdkdWV7zskoREJ7LAyZNDoV1KE65FoBOqyR1q1nb/bHEALi562G1a\nM97Nl5Uh9yZLjp0BadqD9tpDrD7Q61lGXjIBZMNfwjYcpAqWF7cS4/gFZDV07jEQ\nP4pPbEWD7QKBgB75tiaQv5f4GX7QIKMelphcOC4Z7kUJfNOQGeVAC0oqRhPkq9d4\nyVvTxEUjdEm/lHRPEx/U+wHLBePctNCabBj7xKqK73UTKqrvzhQ+iz5kD7piLkr5\n3S0mphdyBcM1m4vWvNUhXi+kLdz2u4lM5YoV2r5zJpXrp4ErDhIvXpSpAoGBALwA\nNO0vGBuusghnr2SNbwOlfHW0Iyp+mhB2V8sSx7sJYNk3GEijV+fSseZd+sO9vjFp\nullc/skWAZrfnI+yrD1vZr0ukDJrgI1VmZHYkeMZJHUwMZNDt7qI2bseZH/sTPco\nF2crHe5J4gcU4UA+2FAEJWiYv272cFa13W//K2c5AoGAYmagZ+RdL2sZMYVbMmPH\n/MigL68xlTAV0U/J3iH9eN0VVQ87jBJnRrMRbVMn8dAO526+rgna56IiX17Xc48B\n5NAOb7gt+BNa3fZS6lwTmM3Zu9iThNLbPWzWSWwbSypfM8QwnLLV7YIp4BPSaxsP\nkOkxjhmOgfaWpKeYsuBcJqk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "discord-speech@discord-speech-to-text-311801.iam.gserviceaccount.com",
+  "client_id": "111846081446884814437",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/discord-speech%40discord-speech-to-text-311801.iam.gserviceaccount.com"
+}
