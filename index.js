@@ -62,7 +62,6 @@ async function convert_audio(input) {
 const SETTINGS_FILE = 'settings.json';
 
 let DISCORD_TOK = null;
-let WITAPIKEY = null; 
 let SPOTIFY_TOKEN_ID = null;
 let SPOTIFY_TOKEN_SECRET = null;
 
@@ -70,79 +69,77 @@ function loadConfig() {
     if (fs.existsSync(SETTINGS_FILE)) {
         const CFG_DATA = JSON.parse( fs.readFileSync(SETTINGS_FILE, 'utf8') );
         DISCORD_TOK = CFG_DATA.discord_token;
-        WITAPIKEY = CFG_DATA.wit_ai_token;
     } else {
         DISCORD_TOK = process.env.DISCORD_TOK;
-        WITAPIKEY = process.env.WITAPIKEY;
     }
-    if (!DISCORD_TOK || !WITAPIKEY)
+    if (!DISCORD_TOK)
         throw 'failed loading config #113 missing keys!'
     
 }
 loadConfig()
 
 const https = require('https')
-function listWitAIApps(cb) {
-    const options = {
-      hostname: 'api.wit.ai',
-      port: 443,
-      path: '/apps?offset=0&limit=100',
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+WITAPIKEY,
-      },
-    }
+//function listWitAIApps(cb) {
+//    const options = {
+ //     hostname: 'api.wit.ai',
+  //    port: 443,
+   //   path: '/apps?offset=0&limit=100',
+    //  method: 'GET',
+    //  headers: {
+    //    'Content-Type': 'application/json',
+    //    'Authorization': 'Bearer '+WITAPIKEY,
+    //  },
+  //  }
 
-    const req = https.request(options, (res) => {
-      res.setEncoding('utf8');
-      let body = ''
-      res.on('data', (chunk) => {
-        body += chunk
-      });
-      res.on('end',function() {
-        cb(JSON.parse(body))
-      })
-    })
+//    const req = https.request(options, (res) => {
+//      res.setEncoding('utf8');
+//      let body = ''
+//      res.on('data', (chunk) => {
+ //       body += chunk
+ //     });
+ //     res.on('end',function() {
+ //       cb(JSON.parse(body))
+ //     })
+ //   })
 
-    req.on('error', (error) => {
-      console.error(error)
-      cb(null)
-    })
-    req.end()
-}
-function updateWitAIAppLang(appID, lang, cb) {
-    const options = {
-      hostname: 'api.wit.ai',
-      port: 443,
-      path: '/apps/' + appID,
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+WITAPIKEY,
-      },
-    }
-    const data = JSON.stringify({
-      lang
-    })
+ //   req.on('error', (error) => {
+ //     console.error(error)
+//      cb(null)
+  //  })
+//    req.end()
+//}
+//function updateWitAIAppLang(appID, lang, cb) {
+//    const options = {
+ //     hostname: 'api.wit.ai',
+ //     port: 443,
+  //    path: '/apps/' + appID,
+  //    method: 'PUT',
+  //    headers: {
+  //      'Content-Type': 'application/json',
+ //       'Authorization': 'Bearer '+WITAPIKEY,
+//      },
+//    }
+//    const data = JSON.stringify({
+//      lang
+//    })
 
-    const req = https.request(options, (res) => {
-      res.setEncoding('utf8');
-      let body = ''
-      res.on('data', (chunk) => {
-        body += chunk
-      });
-      res.on('end',function() {
-        cb(JSON.parse(body))
-      })
-    })
-    req.on('error', (error) => {
-      console.error(error)
-      cb(null)
-    })
-    req.write(data)
-    req.end()
-}
+ //   const req = https.request(options, (res) => {
+//      res.setEncoding('utf8');
+//      let body = ''
+ //     res.on('data', (chunk) => {
+ //       body += chunk
+ //     });
+//      res.on('end',function() {
+ //       cb(JSON.parse(body))
+ //     })
+  //  })
+ //   req.on('error', (error) => {
+  //    console.error(error)
+ //     cb(null)
+//    })
+//    req.write(data)
+//    req.end()
+//}
 
 //////////////////////////////////////////
 //////////////////////////////////////////
